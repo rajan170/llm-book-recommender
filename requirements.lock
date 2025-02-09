@@ -25,6 +25,7 @@ anyio==4.8.0
     # via gradio
     # via httpx
     # via jupyter-server
+    # via openai
     # via starlette
     # via watchfiles
 appnope==0.1.4
@@ -105,6 +106,8 @@ deprecated==1.2.18
     # via opentelemetry-api
     # via opentelemetry-exporter-otlp-proto-grpc
     # via opentelemetry-semantic-conventions
+distro==1.9.0
+    # via openai
 dnspython==2.7.0
     # via email-validator
 durationpy==0.9
@@ -123,6 +126,7 @@ ffmpy==0.5.0
     # via gradio
 filelock==3.17.0
     # via huggingface-hub
+    # via torch
     # via transformers
 flatbuffers==25.1.24
     # via onnxruntime
@@ -136,6 +140,7 @@ frozenlist==1.5.0
 fsspec==2025.2.0
     # via gradio-client
     # via huggingface-hub
+    # via torch
 google-auth==2.38.0
     # via kubernetes
 googleapis-common-protos==1.66.0
@@ -166,12 +171,14 @@ httpx==0.28.1
     # via gradio-client
     # via jupyterlab
     # via langsmith
+    # via openai
     # via safehttpx
 httpx-sse==0.4.0
     # via langchain-community
 huggingface-hub==0.28.1
     # via gradio
     # via gradio-client
+    # via sentence-transformers
     # via tokenizers
     # via transformers
 humanfriendly==10.0
@@ -213,6 +220,11 @@ jinja2==3.1.5
     # via jupyterlab
     # via jupyterlab-server
     # via nbconvert
+    # via torch
+jiter==0.8.2
+    # via openai
+joblib==1.4.2
+    # via scikit-learn
 json5==0.10.0
     # via jupyterlab-server
 jsonpatch==1.33
@@ -278,11 +290,14 @@ langchain-chroma==0.2.1
     # via llm-book-recommender
 langchain-community==0.3.16
     # via llm-book-recommender
-langchain-core==0.3.33
+langchain-core==0.3.34
     # via langchain
     # via langchain-chroma
     # via langchain-community
+    # via langchain-openai
     # via langchain-text-splitters
+langchain-openai==0.3.4
+    # via llm-book-recommender
 langchain-text-splitters==0.3.5
     # via langchain
 langsmith==0.3.4
@@ -332,6 +347,8 @@ nbformat==5.10.4
     # via nbconvert
 nest-asyncio==1.6.0
     # via ipykernel
+networkx==3.4.2
+    # via torch
 notebook==7.3.2
     # via jupyter
     # via llm-book-recommender
@@ -349,6 +366,8 @@ numpy==1.26.4
     # via matplotlib
     # via onnxruntime
     # via pandas
+    # via scikit-learn
+    # via scipy
     # via seaborn
     # via transformers
 oauthlib==3.2.2
@@ -356,6 +375,8 @@ oauthlib==3.2.2
     # via requests-oauthlib
 onnxruntime==1.20.1
     # via chromadb
+openai==1.61.1
+    # via langchain-openai
 opentelemetry-api==1.29.0
     # via chromadb
     # via opentelemetry-exporter-otlp-proto-grpc
@@ -427,6 +448,7 @@ pexpect==4.9.0
 pillow==11.1.0
     # via gradio
     # via matplotlib
+    # via sentence-transformers
 platformdirs==4.3.6
     # via jupyter-core
     # via sigstore
@@ -467,6 +489,7 @@ pydantic==2.10.6
     # via langchain
     # via langchain-core
     # via langsmith
+    # via openai
     # via pydantic-settings
     # via sigstore
     # via sigstore-rekor-types
@@ -530,6 +553,7 @@ referencing==0.36.2
     # via jsonschema-specifications
     # via jupyter-events
 regex==2024.11.6
+    # via tiktoken
     # via transformers
 requests==2.32.3
     # via huggingface-hub
@@ -544,6 +568,7 @@ requests==2.32.3
     # via requests-oauthlib
     # via requests-toolbelt
     # via sigstore
+    # via tiktoken
     # via transformers
     # via tuf
 requests-oauthlib==2.0.0
@@ -575,6 +600,11 @@ safehttpx==0.1.6
     # via gradio
 safetensors==0.5.2
     # via transformers
+scikit-learn==1.6.1
+    # via sentence-transformers
+scipy==1.15.1
+    # via scikit-learn
+    # via sentence-transformers
 seaborn==0.13.2
     # via llm-book-recommender
 securesystemslib==1.2.0
@@ -583,6 +613,8 @@ semantic-version==2.10.0
     # via gradio
 send2trash==1.8.3
     # via jupyter-server
+sentence-transformers==3.4.1
+    # via llm-book-recommender
 shellingham==1.5.4
     # via typer
 sigstore==3.6.1
@@ -598,6 +630,7 @@ six==1.17.0
     # via rfc3339-validator
 sniffio==1.3.1
     # via anyio
+    # via openai
 soupsieve==2.6
     # via beautifulsoup4
 sqlalchemy==2.0.37
@@ -610,6 +643,7 @@ starlette==0.45.3
     # via gradio
 sympy==1.13.3
     # via onnxruntime
+    # via torch
 tenacity==9.0.0
     # via chromadb
     # via langchain
@@ -618,6 +652,10 @@ tenacity==9.0.0
 terminado==0.18.1
     # via jupyter-server
     # via jupyter-server-terminals
+threadpoolctl==3.5.0
+    # via scikit-learn
+tiktoken==0.8.0
+    # via langchain-openai
 tinycss2==1.4.0
     # via bleach
 tokenizers==0.21.0
@@ -625,6 +663,8 @@ tokenizers==0.21.0
     # via transformers
 tomlkit==0.13.2
     # via gradio
+torch==2.4.1
+    # via sentence-transformers
 tornado==6.4.2
     # via ipykernel
     # via jupyter-client
@@ -636,6 +676,8 @@ tqdm==4.67.1
     # via chromadb
     # via huggingface-hub
     # via kagglehub
+    # via openai
+    # via sentence-transformers
     # via transformers
 traitlets==5.14.3
     # via comm
@@ -654,6 +696,7 @@ traitlets==5.14.3
     # via nbformat
 transformers==4.48.2
     # via llm-book-recommender
+    # via sentence-transformers
 tuf==5.1.0
     # via sigstore
 typer==0.15.1
@@ -672,12 +715,14 @@ typing-extensions==4.12.2
     # via ipython
     # via langchain-core
     # via model-signing
+    # via openai
     # via opentelemetry-sdk
     # via pydantic
     # via pydantic-core
     # via pyopenssl
     # via referencing
     # via sqlalchemy
+    # via torch
     # via typer
     # via typing-inspect
 typing-inspect==0.9.0
