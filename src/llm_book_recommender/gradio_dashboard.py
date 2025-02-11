@@ -14,23 +14,23 @@ from langchain_chroma import Chroma
 # Load environment variables from a .env file
 load_dotenv()
 
-books = pd.read_csv("books_with_emotions.csv")
+books = pd.read_csv("src/llm_book_recommender/books_with_emotions.csv")
 
 # Create a new column for high-resolution thumbnails
 books["large_thumbnail"] = books["thumbnail"] + "&fife=w800"
 
 # Handle missing thumbnails by replacing them with a default image
-books["large_thumbnails"] = np.where(
+books["large_thumbnail"] = np.where(
     books["large_thumbnail"].isna(),
     "cover-not-found.jpg",
     books["large_thumbnail"],
 )
 
 # Load raw documents from a text file
-raw_documents = TextLoader("tagged_description.txt").load()
+raw_documents = TextLoader("src/llm_book_recommender/tagged_description.txt").load()
 
 # Initialize a text splitter to split documents by newline characters
-text_splitter = CharacterTextSplitter(splitter="\n", chunk_size=0, chunk_overlap=0)
+text_splitter = CharacterTextSplitter(separator="\n", chunk_size=0, chunk_overlap=0)
 
 # Split the raw documents into smaller chunks
 documents = text_splitter.split_documents(raw_documents)
@@ -135,24 +135,25 @@ categories = ["All"] + sorted(books["simple_categories"].unique())
 tones = ["All"] + ["Happy", "Surprising", "Angry", "Suspenseful", "Sad"]
 
 # Create the Gradio interface
-with gr.Row():
-    user_query = gr.Textbox(label="Please enter a description of a book:",
-                            placeholder="e.g., A story about love and dragons")
+with gr.Blocks() as dashboard:
+    with gr.Row():
+        user_query = gr.Textbox(label="Please enter a description of a book:",
+                                placeholder="e.g., A story about love and dragons")
 
-    category_dropdown = gr.Dropdown(choices=categories, label="Select a category:", value="All")
+        category_dropdown = gr.Dropdown(choices=categories, label="Select a category:", value="All")
 
-    tone_dropdown = gr.Dropdown(choices=tones, label="Select an emotion tone:", value="All")
-    
-    submit_button = gr.Button("Find Recommendations")
+        tone_dropdown = gr.Dropdown(choices=tones, label="Select an emotion tone:", value="All")
+        
+        submit_button = gr.Button("Find Recommendations")
 
-# Display the recommendations in a gallery format
-gr.Markdown("## Recommendations")
-output = gr.Gallery(label="Recommended Books", columns=8, rows=2)
+    # Display the recommendations in a gallery format
+    gr.Markdown("## Recommendations")
+    output = gr.Gallery(label="Recommended Books", columns=8, rows=2)
 
-# Set up the button click event to trigger the recommendation function
-submit_button.click(fn=recommend_books,
-                    inputs=[user_query, category_dropdown, tone_dropdown],
-                    outputs=output)
+    # Set up the button click event to trigger the recommendation function
+    submit_button.click(fn=recommend_books,
+                        inputs=[user_query, category_dropdown, tone_dropdown],
+                        outputs=output)
 
 # Launch the Gradio dashboard if this script is run directly
 if __name__ == "__main__":
