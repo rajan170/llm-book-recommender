@@ -136,19 +136,23 @@ tones = ["All"] + ["Happy", "Surprising", "Angry", "Suspenseful", "Sad"]
 
 # Create the Gradio interface
 with gr.Blocks() as dashboard:
+    gr.Markdown("# Book Recommender System")
+    gr.Markdown("### Find your next favorite book based on your preferences")
+
     with gr.Row():
-        user_query = gr.Textbox(label="Please enter a description of a book:",
-                                placeholder="e.g., A story about love and dragons")
+        with gr.Column(scale=2):
+            user_query = gr.Textbox(label="Please enter a description of a book:",
+                                    placeholder="e.g., A story about love and dragons")
 
-        category_dropdown = gr.Dropdown(choices=categories, label="Select a category:", value="All")
+            category_dropdown = gr.Dropdown(choices=categories, label="Select a category:", value="All")
 
-        tone_dropdown = gr.Dropdown(choices=tones, label="Select an emotion tone:", value="All")
-        
-        submit_button = gr.Button("Find Recommendations")
+            tone_dropdown = gr.Dropdown(choices=tones, label="Select an emotion tone:", value="All")
+            
+            submit_button = gr.Button("Find Recommendations")
 
-    # Display the recommendations in a gallery format
-    gr.Markdown("## Recommendations")
-    output = gr.Gallery(label="Recommended Books", columns=8, rows=2)
+        with gr.Column(scale=3):
+            gr.Markdown("## Recommendations")
+            output = gr.Gallery(label="Recommended Books", columns=4, rows=4, object_fit="contain")
 
     # Set up the button click event to trigger the recommendation function
     submit_button.click(fn=recommend_books,
