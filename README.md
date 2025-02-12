@@ -14,12 +14,12 @@ Welcome to **LLM Book Recommender**, an AI-driven system that curates personaliz
 
 ## 🎯 Features  
 
-✔️ **Natural Language Input** – Describe your dream book in your own words.  
-✔️ **Genre-Based Filtering** – Pick from Fiction, Non-Fiction, Mystery, Fantasy, and more.  
-✔️ **Emotion-Based Tuning** – Find books that evoke specific moods like suspense, joy, or intrigue.  
-✔️ **AI-Powered Recommendations** – Uses advanced **Large Language Models (LLMs)** to understand your preferences.  
-✔️ **Intuitive UI with Gradio** – A sleek, interactive interface for a smooth user experience.  
-✔️ **Dynamic Book Gallery** – Displays high-quality book covers, titles, authors, and summaries.  
+**Natural Language Input** – Describe your dream book in your own words.  
+**Genre-Based Filtering** – Pick from Fiction, Non-Fiction, Mystery, Fantasy, and more.  
+**Emotion-Based Tuning** – Find books that evoke specific moods like suspense, joy, or intrigue.  
+**AI-Powered Recommendations** – Uses advanced **Large Language Models (LLMs)** to understand your preferences.  
+**Intuitive UI with Gradio** – A sleek, interactive interface for a smooth user experience.  
+**Dynamic Book Gallery** – Displays high-quality book covers, titles, authors, and summaries.  
 
 ## 🛠️ Tech Stack  
 
