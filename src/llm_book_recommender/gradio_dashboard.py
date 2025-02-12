@@ -158,7 +158,3 @@ with gr.Blocks() as dashboard:
     submit_button.click(fn=recommend_books,
                         inputs=[user_query, category_dropdown, tone_dropdown],
                         outputs=output)
-
-# Launch the Gradio dashboard if this script is run directly
-if __name__ == "__main__":
-    dashboard.launch(share=True)
