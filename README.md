@@ -2,7 +2,7 @@
 
 > *Discover your next favorite book with AI-powered recommendations!*  
 
-![Project Banner](https://via.placeholder.com/1200x300.png?text=LLM+Book+Recommender)  
+![Screenshot](./img/ss.png)  
 
 ## 🚀 Overview  
 
@@ -63,17 +63,7 @@ python src/main.py
 **Choose a Category & Emotion** – Refine your search.  
 **Explore Recommendations** – Browse through AI-generated book suggestions!  
 
-## 🤝 Contributing  
-
-We welcome contributions from the community!  
-
-1️⃣ **Fork the repository**  
-2️⃣ **Create a feature branch** (`git checkout -b feature/new-feature`)  
-3️⃣ **Commit your changes** (`git commit -m "Added new feature"`)  
-4️⃣ **Push to GitHub** (`git push origin feature/new-feature`)  
-5️⃣ **Open a Pull Request**  
-
-For more details, check the **[CONTRIBUTING.md](CONTRIBUTING.md)** file.  
+ 
 
 ## 📜 License  
 

@@ -150,7 +150,7 @@ with gr.Blocks() as dashboard:
             
             submit_button = gr.Button("Find Recommendations")
 
-        with gr.Column(scale=3):
+        with gr.Column(scale=5):
             gr.Markdown("## Recommendations")
             output = gr.Gallery(label="Recommended Books", columns=4, rows=4, object_fit="contain")
 
