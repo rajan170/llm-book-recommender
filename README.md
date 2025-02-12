@@ -2,8 +2,6 @@
 
 > *Discover your next favorite book with AI-powered recommendations!*  
 
-![Screenshot](./img/ss.png)  
-
 ## 🚀 Overview  
 
 Welcome to **LLM Book Recommender**, an AI-driven system that curates personalized book recommendations just for you! Whether you're craving a **thrilling mystery**, a **thought-provoking non-fiction**, or a **heartwarming romance**, our intelligent model will match you with the perfect book.  
