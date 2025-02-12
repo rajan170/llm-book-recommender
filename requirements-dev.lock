@@ -178,6 +178,7 @@ httpx-sse==0.4.0
 huggingface-hub==0.28.1
     # via gradio
     # via gradio-client
+    # via langchain-huggingface
     # via sentence-transformers
     # via tokenizers
     # via transformers
@@ -294,8 +295,11 @@ langchain-core==0.3.34
     # via langchain
     # via langchain-chroma
     # via langchain-community
+    # via langchain-huggingface
     # via langchain-openai
     # via langchain-text-splitters
+langchain-huggingface==0.1.2
+    # via llm-book-recommender
 langchain-openai==0.3.4
     # via llm-book-recommender
 langchain-text-splitters==0.3.5
@@ -614,6 +618,7 @@ semantic-version==2.10.0
 send2trash==1.8.3
     # via jupyter-server
 sentence-transformers==3.4.1
+    # via langchain-huggingface
     # via llm-book-recommender
 shellingham==1.5.4
     # via typer
@@ -660,6 +665,7 @@ tinycss2==1.4.0
     # via bleach
 tokenizers==0.21.0
     # via chromadb
+    # via langchain-huggingface
     # via transformers
 tomlkit==0.13.2
     # via gradio
@@ -695,6 +701,7 @@ traitlets==5.14.3
     # via nbconvert
     # via nbformat
 transformers==4.48.2
+    # via langchain-huggingface
     # via llm-book-recommender
     # via sentence-transformers
 tuf==5.1.0

@@ -6,7 +6,7 @@ import gradio as gr
 
 from langchain_community.document_loaders import TextLoader
 from langchain_openai import OpenAIEmbeddings
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_chroma import Chroma
@@ -161,4 +161,4 @@ with gr.Blocks() as dashboard:
 
 # Launch the Gradio dashboard if this script is run directly
 if __name__ == "__main__":
-    dashboard.launch()
+    dashboard.launch(share=True)
